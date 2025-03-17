@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 500px;
+            margin: 0 auto;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px grey;
+            margin-top: 50px;
+        }
+        .heading{
+            text-align: center;
+            color: #398be3;
+        }
+        .dice{
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        .btn-roll{
+            display: block;
+            margin: 0 auto;
+            font-size: 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            padding: 5px 30px;
+            background-color: #398be3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">Dice Roller</h1>
+        <img src="img/casino.png" class="dice" id="dice-img">
+
+        <button class="btn-roll" onclick="rollDice()">Roll Dice</button>
+    </div>
+    <script>
+        function rollDice() {
+        const min = 1;
+        const max = 6;
+
+        const random = Math.floor(Math.random() * (max - min + 1)) + min ;
+
+        const diceimg = document.getElementById("dice-img");
+
+        if(random==1){
+            diceimg.src = './img/one.png';
+        }
+        else if(random==2){
+            diceimg.src = './img/two.png';
+        }
+        else if(random==3){
+            diceimg.src = './img/three.png';
+        }
+        else if(random==4){
+            diceimg.src = './img/four (1).png';
+        }
+        else if(random==5){
+            diceimg.src = './img/five.png';
+        }
+        else if(random==6){
+            diceimg.src = './img/six.png';
+        }
+        }   
+        
+    </script>
+</body>
+</html>
